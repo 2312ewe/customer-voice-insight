@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.DS_Store
+Thumbs.db
+gen_password.py
+reset.bat
+run.bat
+*.xlsx
+*.docx
+*.pdf

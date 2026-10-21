@@ -1,0 +1,21 @@
+credentials:
+  usernames:
+    admin:
+      email: admin@company.com
+      name: 管理员
+      password: $2b$12$5GCBK7oekecqVmxoIeeFb.bI8i8QD.VJqxUQhsutpnkS7Vs8Khaie
+    user01:
+      email: user01@company.com
+      name: 张三
+      password: $2b$12$1jsFdj6vjYOkOeniQnZTFeREjoAWQN.U31JxNjdKVf6.cSCKG7kPy
+    用户1:
+      email: 123456@qq.com
+      name: 用户1
+      password: $2b$12$NY2lrPwifWSsiW7qs2QLoehjPjpkre4RoVXZYCx5g/2i.uclyzNgC
+cookie:
+  name: customer_voice_insight_cookie
+  key: cvi_sk_2026_secret_key_please_change
+  expiry_days: 30
+preauthorized:
+  emails:
+  - admin@company.com
