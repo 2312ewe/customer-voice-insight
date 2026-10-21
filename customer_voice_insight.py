@@ -51,12 +51,18 @@ if not _auth_status:
 st.session_state["current_user"] = _username
 st.session_state["current_name"] = _name
 
+def _get_secret(key, default=""):
+    try:
+        return st.secrets.get(key, default)
+    except Exception:
+        return os.environ.get(key, default)
+
 if "api_key" not in st.session_state:
-    st.session_state.api_key = os.environ.get("OPENAI_API_KEY", "") or os.environ.get("DASHSCOPE_API_KEY", "")
+    st.session_state.api_key = _get_secret("api_key") or _get_secret("DASHSCOPE_API_KEY") or _get_secret("OPENAI_API_KEY", "")
 if "api_url" not in st.session_state:
-    st.session_state.api_url = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+    st.session_state.api_url = _get_secret("api_url", "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions")
 if "model" not in st.session_state:
-    st.session_state.model = "qwen3.5-27b"
+    st.session_state.model = _get_secret("model", "qwen3.5-27b")
 if "temperature" not in st.session_state:
     st.session_state.temperature = 0.3
 
